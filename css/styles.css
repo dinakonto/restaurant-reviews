@@ -50,7 +50,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 	margin: 0 auto;
 }
 .inside #maincontent {
-	margin-top: 120px;
+	margin-top: 128px;
 }
 #footer {
   background-color: #444;
@@ -123,10 +123,6 @@ nav h1 a {
   background-color: #ccc;
 }
 /* ====================== Restaurant Filtering ====================== */
-/* .maxwidth {
-	max-width: 1400px;
-	margin: 0 auto;
-} */
 
 .filter-options {
   width: 100%;
@@ -134,6 +130,7 @@ nav h1 a {
   background-color: #3397DB;
   align-items: center;
 	margin: 0 auto;
+	z-index: 1;
 }
 .filter-options h2 {
   color: white;

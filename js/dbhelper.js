@@ -26,7 +26,6 @@ class DBHelper {
       return response.json();
     })
     .then(function(data) {
-      console.log(data.restaurants)
       callback(null, data.restaurants);
     })
     .catch(function(err) { // Oops!. Something done messed up.
