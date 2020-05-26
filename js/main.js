@@ -136,11 +136,18 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  * Create restaurant HTML.
  */
 createRestaurantHTML = (restaurant) => {
+  // TODO: Get data from responsive_images.json
+
   const li = document.createElement('li');
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.srcset = DBHelper.imageSrcSetForRestaurant(restaurant);
+  // TODO: Add img sizes attribute
+  image.sizes = "(max-width: 600px) 100vw, (max-width: 850px) and (min-width: 600px) 50vw, (max-width: 1000px) and (min-width: 850px) 33vw, (min-width: 1000px) 25vw";
+
+  image.alt = restaurant.photoAlt;
   li.append(image);
 
   const wrapDetail = document.createElement('div');

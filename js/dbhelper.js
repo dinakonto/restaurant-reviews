@@ -12,6 +12,11 @@ class DBHelper {
     return `http://localhost:${port}/data/restaurants.json`;
   }
 
+  static get IMAGE_SIZES() {
+    const port = 8000 // Change this to your server port
+    return `http://localhost:${port}/data/responsive-images.json`;
+  }
+
   /**
    * Fetch all restaurants.
    */
@@ -26,7 +31,7 @@ class DBHelper {
     })
     .catch(function(err) { // Oops!. Something done messed up.
       const errText = 'Request failed. Returned error: ' + err;
-      error.log(errText);
+      console.log(errText);
     })
   }
 
@@ -149,7 +154,15 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
-    return (`/img/${restaurant.photograph}`);
+    return (`/img/${restaurant.id}-large.jpg`);
+  }
+
+  /**
+   * Restaurant image srcset URLs.
+   */
+   // TODO: Return urls with responsive image sizes
+  static imageSrcSetForRestaurant(restaurant) {
+    return (`/img/${restaurant.id}-large.jpg 800w, /img/${restaurant.id}-medium.jpg 450w, /img/${restaurant.id}-small.jpg 250w`);
   }
 
   /**
