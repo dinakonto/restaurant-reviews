@@ -24,6 +24,9 @@ ul, li {
 	font-family: Arial, Helvetica, sans-serif;
 	color: #333;
 }
+th {
+	text-align: left;
+}
 a {
 	color: orange;
 	text-decoration: none;
@@ -51,6 +54,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 .inside #maincontent {
 	margin-top: 128px;
+	display: flex;
 }
 #footer {
   background-color: #444;
@@ -114,9 +118,6 @@ nav h1 a {
     text-decoration: underline;
 }
 /* ====================== Map ====================== */
-#map-container {
-	/* position: relative; */
-}
 #map {
   height: 400px;
   width: 100%;
@@ -151,7 +152,7 @@ nav h1 a {
 	width: 93%;
 }
 
-/* ====================== Restaurant Listing ====================== */
+/* ====================== Restaurant List ====================== */
 #restaurants-list {
   background-color: #f3f3f3;
   list-style: outside none none;
@@ -217,16 +218,19 @@ nav h1 a {
 .inside #map-container {
   background: blue none repeat scroll 0 0;
 	width: 100%;
-	height: 500px;
+	height: 400px;
+	order: 1;
 }
 .inside #map {
   background-color: #ccc;
-  height: 100%;
+  height: calc(100% - 128px);
   width: 100%;
+	height: 100%;
 }
 .inside #footer {
   bottom: 0;
   position: absolute;
+	width: 100%;
 }
 #restaurant-name {
   color: #f18200;
@@ -246,6 +250,16 @@ nav h1 a {
 #restaurant-address {
   margin: 10px 0px;
 }
+
+.hidden-accessible a {
+	position: absolute;
+	left: -10000px;
+}
+.hidden-accessible a:focus {
+	position: inherit;
+
+}
+
 #restaurant-cuisine {
   background-color: #333;
   color: #ddd;
@@ -264,6 +278,7 @@ nav h1 a {
   border-top: 1px solid #fff;
   padding: 30px;
   max-width: 100%;
+	order: 2;
 }
 #reviews-container {
 	padding-bottom: 80px;
@@ -360,13 +375,16 @@ nav h1 a {
 		position: fixed;
 		width: 50%;
 		left: 50%;
-		height: 100%;
+		height: calc(100% - 130px);
 	}
 	#restaurant-container {
 		width: calc(50% - 60px);
 	}
 	#reviews-container {
 		width: calc(50% - 60px);
+	}
+	.inside #footer {
+		width: 50%;
 	}
 }
 

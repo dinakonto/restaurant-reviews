@@ -19,9 +19,9 @@
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
-    <ul id="breadcrumb" >
+    <ol id="breadcrumb" aria-label="Breadcrumb">
       <li><a href="/">Home</a></li>
-    </ul>
+    </ol>
   </header>
   <!-- End header -->
 
@@ -32,15 +32,16 @@
     <section id="restaurant-container">
       <h1 id="restaurant-name"></h1>
       <img id="restaurant-img">
-      <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
+      <p id="restaurant-cuisine" aria-label="Cuisine"></p>
+      <p id="restaurant-address" aria-label="location"></p>
+
+      <table id="restaurant-hours" aria-label="Opening hours"></table>
     </section>
     <!-- end restaurant -->
 
     <!-- Beginning reviews -->
     <section id="reviews-container">
-      <ul id="reviews-list"></ul>
+      <ul id="reviews-list" aria-label="Reviews"></ul>
     </section>
     <!-- End reviews -->
 
