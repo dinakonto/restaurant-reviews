@@ -1,6 +1,12 @@
 @charset "utf-8";
 /* CSS Document */
 
+*, *:before, *:after {
+		 -moz-box-sizing: border-box;
+		 -webkit-box-sizing: border-box;
+		 box-sizing: border-box;
+		}
+
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
 	color: #333;
@@ -12,6 +18,7 @@ body {
 	position: relative;
 	font-size: 16px; /* Base font size */
 	box-sizing: border-box;
+	width: 100%;
 }
 ul, li {
 	font-family: Arial, Helvetica, sans-serif;
@@ -53,7 +60,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
-	width: 96.5%;
+	width: 100%;
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -107,22 +114,26 @@ nav h1 a {
     text-decoration: underline;
 }
 /* ====================== Map ====================== */
+#map-container {
+	/* position: relative; */
+}
 #map {
   height: 400px;
   width: 100%;
   background-color: #ccc;
 }
 /* ====================== Restaurant Filtering ====================== */
-.maxwidth {
+/* .maxwidth {
 	max-width: 1400px;
 	margin: 0 auto;
-}
+} */
 
 .filter-options {
-  width: 96.5%;
-	padding: 10px 15px; /* Changes will impact '.filter-options select' width */
+  width: 100%;
+	padding: 10px 15px;
   background-color: #3397DB;
   align-items: center;
+	margin: 0 auto;
 }
 .filter-options h2 {
   color: white;
@@ -140,7 +151,7 @@ nav h1 a {
   letter-spacing: 0;
   margin: 10px;
   padding: 0 10px;
-  width: calc(50% - 30px); /* 30px = '.filter-options' padding - 20px gutter */
+	width: 93%;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -219,7 +230,6 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 96.5%;
 }
 #restaurant-name {
   color: #f18200;
@@ -331,7 +341,22 @@ nav h1 a {
 	#restaurants-list {
 		display: grid;
 		grid-template-columns: repeat(2, 50%);
+		margin-top: 50px;
 	}
+	#map-container {
+		position: relative;
+	}
+	.filter-options {
+		position: absolute;
+		top: 350px;
+		width: 70%;
+		margin: 0 15%;
+		border-radius: 4px;
+	}
+	.filter-options select {
+		width: calc(50% - 30px);
+	}
+
 
 	/* Restaurant detail - Switch to two column layout */
 	.inside #map-container {
